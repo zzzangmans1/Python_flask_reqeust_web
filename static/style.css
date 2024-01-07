@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+}
+#request-list {
+    float: left;
+    width: 50%;
+}
+#request-details {
+    float: right;
+    width: 50%;
+}
+#urlField {
+    width: 80%;
+    padding: 10px;
+    margin: 20px 0;
+    height: 50px;
+}
+#generateBtn {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

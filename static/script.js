@@ -26,9 +26,9 @@ function fetchEndpointData(endpoint) {
     fetch(endpoint)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             const requestInfoDiv = document.getElementById('request-details');
             requestInfoDiv.innerHTML = `
+                <h2>Details</h2>
                 <p>Method: ${data.method}</p>
                 <p>URL: ${data.url}</p>
                 <p>Base URL: ${data.base_url}</p>
@@ -36,8 +36,14 @@ function fetchEndpointData(endpoint) {
                 <p>Headers: ${JSON.stringify(data.headers)}</p>
                 <p>Data: ${data.data}</p>
                 <p>Text Data: ${data.text_data}</p>
-                <p>Time: ${data.time}</p>
             `;
+            const requestsummaryDiv = document.getElementById('request-list');
+            requestsummaryDiv.innerHTML = `
+                <h2>Requests</h2>
+                <p>Method: ${data.method}</p>
+                <p>Host: ${JSON.stringify(data.headers['Host'])}</p>
+                <p>Time: ${data.time}</p>
+            `
         })
         .catch(error => console.error('Error fetching endpoint data:', error));
 }

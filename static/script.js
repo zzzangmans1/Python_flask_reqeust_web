@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 5000);
 });
 
+// loglist 에 요청 함수
 function fetchEndpointData(endpoint) {
     fetch(endpoint)
         .then(response => response.json())
         .then(data => {
+            // 모든 정보 출력
             const requestInfoDiv = document.getElementById('request-details');
             requestInfoDiv.innerHTML = `
                 <h2>Details</h2>
@@ -37,6 +39,7 @@ function fetchEndpointData(endpoint) {
                 <p>Data: ${data.data}</p>
                 <p>Text Data: ${data.text_data}</p>
             `;
+            // 요약 정보 출력
             const requestsummaryDiv = document.getElementById('request-list');
             requestsummaryDiv.innerHTML = `
                 <h2>Requests</h2>
